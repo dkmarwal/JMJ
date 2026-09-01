@@ -1,0 +1,156 @@
+/* JMJ Enterprises Solutions - Custom Corporate Styles & Animations */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #090F1C;
+}
+::-webkit-scrollbar-thumb {
+    background: #254E70;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #F39C12;
+}
+
+/* Brand Gradients & Accents */
+.bg-brand-dark {
+    background-color: #090F1C;
+}
+.bg-brand-navy {
+    background-color: #0F1E36;
+}
+.bg-brand-steel {
+    background-color: #254E70;
+}
+.bg-brand-gold {
+    background-color: #F39C12;
+}
+.bg-brand-canvas {
+    background-color: #F8FAFC;
+}
+
+.text-brand-gold {
+    color: #F39C12;
+}
+.text-brand-steel {
+    color: #254E70;
+}
+.text-brand-dark {
+    color: #090F1C;
+}
+
+.border-brand-gold {
+    border-color: #F39C12;
+}
+.border-brand-steel {
+    border-color: #254E70;
+}
+
+/* Luxury Shadows */
+.shadow-premium {
+    box-shadow: 0 20px 50px -12px rgba(9, 15, 28, 0.08);
+}
+.shadow-glow {
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.2);
+}
+.shadow-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shadow-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(9, 15, 28, 0.15);
+}
+
+/* Mega Menu Dropdowns */
+.mega-menu-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+.mega-menu-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+.group:hover .mega-menu-wrapper {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Subtle Shimmer & Pulse */
+@keyframes goldPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.animate-gold-pulse {
+    animation: goldPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Rich Content Typography Styling */
+.article-content h2 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #090F1C;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+.article-content h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0F1E36;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.article-content p {
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+.article-content ul, .article-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #334155;
+    line-height: 1.7;
+}
+.article-content ul {
+    list-style-type: disc;
+}
+.article-content ol {
+    list-style-type: decimal;
+}
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+.article-content blockquote {
+    border-left: 4px solid #F39C12;
+    padding-left: 1.25rem;
+    font-style: italic;
+    color: #475569;
+    margin: 1.5rem 0;
+    background: #F8FAFC;
+    padding: 1rem 1.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.article-content img {
+    border-radius: 0.75rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,94 @@
+/* JMJ Enterprises Solutions - Admin Dashboard Custom Styling */
+
+/* Admin Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #f59e0b;
+}
+
+/* Sidebar Active & Hover States */
+.admin-nav-link.active {
+    background-color: #f59e0b;
+    color: #0f172a;
+    font-weight: 700;
+}
+.admin-nav-link:not(.active):hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Metric Card Hover Glow */
+.metric-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+}
+
+/* WYSIWYG Editor Toolbar */
+.editor-toolbar button {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+.editor-toolbar button:hover {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* Rich Editor Visual Content Box */
+.editor-canvas {
+    min-height: 350px;
+    outline: none;
+    line-height: 1.7;
+    font-size: 15px;
+    color: #1e293b;
+}
+.editor-canvas:focus {
+    background-color: #ffffff;
+}
+.editor-canvas h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 1.25rem 0 0.5rem;
+}
+.editor-canvas h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem;
+}
+.editor-canvas p {
+    margin-bottom: 0.75rem;
+}
+.editor-canvas ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.editor-canvas ol {
+    list-style: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.editor-canvas blockquote {
+    border-left: 4px solid #f59e0b;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #64748b;
+    margin: 1rem 0;
+}

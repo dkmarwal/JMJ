@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMJ Enterprises Solutions | Premier Security & Facility Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#090F1C',     /* Premium Midnight Obsidian */
+                            navy: '#0F1E36',     /* Deep Corporate Navy */
+                            steel: '#254E70',    /* Operational Slate Steel */
+                            gold: '#F39C12',     /* Luxury Security Amber/Gold */
+                            canvas: '#F8FAFC'    /* Ultra Clean Light Grey */
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(9, 15, 28, 0.08)',
+                        'glow': '0 0 20px rgba(243, 156, 18, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts for High-End Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-brand-canvas text-slate-800 antialiased scroll-smooth">
+
+    <!-- RE-ENGINEERED HIGH-SECURITY HEADER -->
+    <header class="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b-2 border-slate-100">
+        <!-- Operational Info Strip -->
+        <div class="bg-[#090F1C] text-slate-400 text-[11px] py-2.5 px-6 hidden lg:block border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <span class="flex items-center"><i class="fas fa-shield-halved text-[#F39C12] mr-2"></i> Operational Roster: PSARA Compliant</span>
+                    <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                    <span class="flex items-center"><i class="fas fa-map-marker-alt text-[#F39C12] mr-2"></i> Delhi NCR • Gurgaon • Noida • Bangalore</span>
+                    <span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+                    <span class="flex items-center"><i class="fas fa-envelope text-[#F39C12] mr-2 text-sm"></i> jmjsanu@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-4 text-xs">
+                    <span class="text-[#F39C12] font-semibold"><i class="fas fa-phone mr-1"></i> 24/7 Dispatch Control Center</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center relative">
+            <!-- Brand Identity -->
+            <a href="#" class="flex items-center space-x-4 group z-50">
+                <div class="h-14 w-14 bg-gradient-to-br flex items-center justify-center text-[#F39C12] font-black text-xl overflow-hidden rounded-xl border border-slate-200 bg-white">
+                    <img src="img/logo.jpg" alt="JMJ Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-tight text-[#090F1C] leading-none">JMJ ENTERPRISES</span>
+                    <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase mt-1">Security & Facility Excellence</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Menu Links -->
+            <nav class="hidden lg:flex space-x-8 font-semibold text-slate-600 text-sm">
+                <a href="#home" class="text-[#090F1C] border-b-2 border-[#F39C12] pb-1 transition">Home</a>
+                <a href="#process" class="hover:text-[#090F1C] transition pb-1">About Us</a>
+                <a href="#sectors" class="hover:text-[#090F1C] transition pb-1">Security</a>
+                <a href="#security" class="hover:text-[#090F1C] transition pb-1">Cleaning</a>
+                <a href="#cleaning" class="hover:text-[#090F1C] transition pb-1">Clientele</a>
+                <a href="#clientele" class="hover:text-[#090F1C] transition pb-1">Contact Us</a>
+            </nav>
+
+            <!-- Desktop Action Button -->
+            <div class="hidden sm:flex items-center z-50">
+                <a href="#contact" class="bg-[#090F1C] hover:bg-[#254E70] text-white text-xs font-bold px-6 py-4 rounded-xl uppercase tracking-wider shadow-lg transition-all duration-300 border border-slate-800">
+                    Request Site Survey
+                </a>
+            </div>
+
+            <!-- Responsive Mobile Burger Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-[#090F1C] focus:outline-none p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition z-50" aria-label="Toggle Navigation Menu">
+                <i class="fas fa-bars text-xl block text-slate-800" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Sliding Mobile Navigation Drawer -->
+        <!-- Sliding Mobile Navigation Drawer (Fixed Overlap & Background Height) -->
+        <div id="mobile-drawer" class="fixed top-0 bottom-0 right-0 w-full sm:w-80 h-screen bg-brand-dark text-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col justify-between p-8 pt-32">
+            
+            <!-- Navigation Links Wrapper -->
+            <nav class="flex flex-col space-y-6 text-lg font-bold">
+                <a href="#home" class="mobile-link text-[#F39C12] hover:text-amber-400 transition">Home</a>
+                <a href="#process" class="mobile-link hover:text-[#F39C12] transition">About Us</a>
+                <a href="#sectors" class="mobile-link hover:text-[#F39C12] transition">Security</a>
+                <a href="#security" class="mobile-link hover:text-[#F39C12] transition">Cleaning</a>
+                <a href="#cleaning" class="mobile-link hover:text-[#F39C12] transition">Clientele</a>
+                <a href="#clientele" class="mobile-link hover:text-[#F39C12] transition">Contact Us</a>
+            </nav>
+
+            <!-- Bottom Drawer Call-to-Action & Operations Info -->
+            <div class="space-y-6 border-t border-slate-800/80 pt-6">
+                <a href="#contact" class="mobile-link block w-full bg-[#F39C12] hover:bg-amber-500 text-[#090F1C] font-extrabold text-center py-4 rounded-xl uppercase tracking-wider text-xs transition">
+                    Request Site Survey
+                </a>
+                <div class="text-xs text-slate-400 space-y-2">
+                    <p class="flex items-center"><i class="fas fa-phone text-[#F39C12] mr-2"></i> 24/7 Dispatch Control</p>
+                    <p class="flex items-center"><i class="fas fa-envelope text-[#F39C12] mr-2"></i> jmjsanu@gmail.com</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Background Tint Overlay when Drawer Opens -->
+        <div id="drawer-overlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-30 lg:hidden"></div>
+    </header>
+
+    <!-- RE-DESIGNED HERO SECTION -->
+    <section id="home" class="relative bg-[#090F1C] text-white overflow-hidden py-24 lg:py-32 border-b-4 border-[#F39C12]">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#254E70_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+            <!-- Copywriting Block -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-xl text-xs font-bold bg-white/5 text-[#F39C12] border border-white/10 tracking-wide uppercase">
+                    <i class="fas fa-shield-halved mr-2 text-sm animate-pulse"></i> Intelligent Protection & Commercial Hygiene
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.1]">
+                    Securing Assets. <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#F39C12] via-amber-400 to-amber-200">Perfecting Spaces.</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed">
+                    JMJ Enterprises Solutions anchors high-threat corporate infrastructures with background-verified tactical guard personnel while deploying advanced, hospital-grade cleaning technologies.
+                </p>
+                
+                <!-- Re-aligned Call To Action Buttons -->
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#contact" class="inline-flex items-center justify-center bg-[#F39C12] hover:bg-amber-500 text-[#090F1C] font-extrabold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:scale-[1.02] text-xs uppercase tracking-widest min-w-[240px]">
+                        Deploy Security / Cleaning
+                    </a>
+                    <a href="#process" class="inline-flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/20 text-white font-extrabold px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.02] text-xs uppercase tracking-widest min-w-[200px]">
+                        Operational Protocols
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4-Grid Media Layout -->
+            <div class="lg:col-span-5 relative hidden lg:block">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-6 space-y-4">
+                        <div class="relative group overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+                            <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400" alt="Tactical Guarding Deployment" class="h-44 w-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="relative group overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+                            <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=400" alt="Industrial Sanitization Protocol" class="h-60 w-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                    <div class="col-span-6 space-y-4 pt-10">
+                        <div class="relative group overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+                            <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="Risk Assessment Control Center" class="h-60 w-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="relative group overflow-hidden rounded-2xl border border-slate-800 shadow-2xl">
+                            <div class="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition duration-300 z-10"></div>
+                            <img src="img/security.JPG" alt="Premium Facility Upkeep Services" class="h-44 w-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TACTICAL SECURITY OPERATIONS PROCESS -->
+    <section id="process" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs font-bold tracking-widest text-brand-steel uppercase bg-slate-100 px-3 py-1 rounded-full">Standard Operating Blueprint</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mt-3 text-balance">How We Enforce Security Processes</h2>
+                <div class="h-1 w-20 bg-brand-gold mx-auto mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 Card -->
+                <div class="bg-brand-canvas p-8 rounded-2xl border border-slate-200/60 relative hover:shadow-xl transition-all duration-300 group">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-dark group-hover:bg-brand-gold text-brand-gold group-hover:text-brand-dark rounded-xl flex items-center justify-center font-black text-base border border-slate-800 transition-colors duration-300">01</div>
+                    <h4 class="font-extrabold text-xl text-brand-dark mt-4 mb-3">Threat Architecture Audit</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Before standard boots touch the ground, our engineers perform structural gap analyses on perimeters, access gates, and line-of-sight blinds.</p>
+                </div>
+                <!-- Step 2 Card -->
+                <div class="bg-brand-canvas p-8 rounded-2xl border border-slate-200/60 relative hover:shadow-xl transition-all duration-300 group">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-navy group-hover:bg-brand-gold text-brand-gold group-hover:text-brand-dark rounded-xl flex items-center justify-center font-black text-base border border-slate-800 transition-colors duration-300">02</div>
+                    <h4 class="font-extrabold text-xl text-brand-dark mt-4 mb-3">Sector Roster Profiling</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">We sync personnel training metrics directly with your niche environment—assigning precise profiles built exclusively for hospital crisis or bank asset tasks.</p>
+                </div>
+                <!-- Step 3 Card -->
+                <div class="bg-brand-canvas p-8 rounded-2xl border border-slate-200/60 relative hover:shadow-xl transition-all duration-300 group">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-dark group-hover:bg-brand-gold text-brand-gold group-hover:text-brand-dark rounded-xl flex items-center justify-center font-black text-base border border-slate-800 transition-colors duration-300">03</div>
+                    <h4 class="font-extrabold text-xl text-brand-dark mt-4 mb-3">Live Dispatch Integration</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Personnel tie directly into our central monitoring station channels, requiring geo-fenced biometric roll calls and status reports every 60 minutes.</p>
+                </div>
+                <!-- Step 4 Card -->
+                <div class="bg-brand-canvas p-8 rounded-2xl border border-slate-200/60 relative hover:shadow-xl transition-all duration-300 group">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-brand-navy group-hover:bg-brand-gold text-brand-gold group-hover:text-brand-dark rounded-xl flex items-center justify-center font-black text-base border border-slate-800 transition-colors duration-300">04</div>
+                    <h4 class="font-extrabold text-xl text-brand-dark mt-4 mb-3">Unannounced Night Audits</h4>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Mobile night-patrol marshals run random field checks to test guard reflexes, verify gate lock protocols, and evaluate backup response readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRITICAL SECTOR SOLUTIONS SHOWCASE -->
+    <section id="sectors" class="py-28 bg-brand-canvas border-t border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs font-bold tracking-widest text-brand-steel uppercase bg-slate-200/60 px-3 py-1 rounded-full">Environmental Customization</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mt-3">Specialized Sector Architectures</h2>
+                <div class="h-1 w-20 bg-brand-gold mx-auto mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Sector: Banking -->
+                <div class="bg-white rounded-2xl shadow-premium border border-slate-200/60 overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&q=80&w=600" alt="Bank Security Setup" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-dark text-brand-gold px-3 py-1 rounded-lg text-[10px] font-bold tracking-widest uppercase z-20 border border-slate-700">Strict Threat Profile</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-brand-dark mb-3 flex items-center"><i class="fas fa-vault mr-3 text-brand-steel text-xl"></i>Banking Units</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                            Armed and tactical personnel trained in crisis de-escalation, transit cash protection, perimeter control, and zero-compromise vault entry verifications.
+                        </p>
+                        <div class="bg-brand-canvas p-4 rounded-xl text-xs font-bold text-slate-600 border border-slate-200 flex items-center">
+                            <i class="fas fa-fingerprint text-brand-gold mr-2 text-base"></i> Focus: Zero-Failure Access Controls
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector: Hospitals -->
+                <div class="bg-white rounded-2xl shadow-premium border border-slate-200/60 overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 z-10"></div>
+                        <img src="img/hospital.JPG" alt="Hospital Management" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-dark text-brand-gold px-3 py-1 rounded-lg text-[10px] font-bold tracking-widest uppercase z-20 border border-slate-700">High Crowd Density</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-brand-dark mb-3 flex items-center"><i class="fas fa-hospital-user mr-3 text-brand-steel text-xl"></i>Healthcare Networks</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                            Patient-conscious emergency room crowd controllers paired with sanitized sanitation teams engineered to clean surgical suites, clinical zones, and bio-waste footprints.
+                        </p>
+                        <div class="bg-brand-canvas p-4 rounded-xl text-xs font-bold text-slate-600 border border-slate-200 flex items-center">
+                            <i class="fas fa-biohazard text-brand-gold mr-2 text-base"></i> Focus: Pathogen Micro-Sanitization Loops
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector: Corporate MNCs -->
+                <div class="bg-white rounded-2xl shadow-premium border border-slate-200/60 overflow-hidden group hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-brand-dark/20 z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" alt="Corporate Office Facilities" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <span class="absolute top-4 right-4 bg-brand-dark text-brand-gold px-3 py-1 rounded-lg text-[10px] font-bold tracking-widest uppercase z-20 border border-slate-700">Brand Representation</span>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-black text-brand-dark mb-3 flex items-center"><i class="fas fa-building-office mr-3 text-brand-steel text-xl"></i>Corporate Offices</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                            Elite corporate concierge guards managing automated turnstiles alongside eco-friendly floor waxing crews, high-altitude facade cleaners, and premium carpet extractors.
+                        </p>
+                        <div class="bg-brand-canvas p-4 rounded-xl text-xs font-bold text-slate-600 border border-slate-200 flex items-center">
+                            <i class="fas fa-sparkles text-brand-gold mr-2 text-base"></i> Focus: High-Gloss Aesthetic Maintenance
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED OPERATIONS ROSTER: SECURITY GUARDS -->
+    <section id="security" class="py-28 bg-brand-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-20">
+                <span class="text-xs font-bold tracking-widest text-brand-gold uppercase">Vetted Personnel Management</span>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight mt-3">Elite Manned Security Fleet</h2>
+                <div class="h-1 w-16 bg-brand-gold mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-brand-navy/60 p-8 rounded-2xl border border-slate-800/80 hover:border-brand-gold transition duration-300">
+                    <div class="text-brand-gold text-3xl mb-5"><i class="fas fa-building"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Corporate Roster Units</h4>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Systematic gate pass monitoring, structural parking logistics, and routine perimeter fire-safety checks.</p>
+                </div>
+                <div class="bg-brand-navy/60 p-8 rounded-2xl border border-slate-800/80 hover:border-brand-gold transition duration-300">
+                    <div class="text-brand-gold text-3xl mb-5"><i class="fas fa-industry"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Heavy Industrial Guards</h4>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Trained for manufacturing plants, managing supply yard weight scales, loading bays, and tracking raw material logs.</p>
+                </div>
+                <div class="bg-brand-navy/60 p-8 rounded-2xl border border-slate-800/80 hover:border-brand-gold transition duration-300">
+                    <div class="text-brand-gold text-3xl mb-5"><i class="fas fa-user-shield"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-white">Lady Security Details</h4>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Highly professional female officers handling embassy protocols, high-end hotel screening, and luxury retail hubs.</p>
+                </div>
+                <div class="bg-brand-navy/60 p-8 rounded-2xl border border-slate-800/80 hover:border-brand-gold transition duration-300">
+                    <div class="text-brand-gold text-3xl mb-5"><i class="fas fa-credit-card"></i></div>
+                    <h4 class="font-bold text-lg mb-2 text-white">ATM Rapid Response</h4>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">Dedicated, highly responsive personnel drilled for quick response times and asset lock protection during late-night cycles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROMINENT OPERATIONS ROSTER: CLEANING SERVICES -->
+    <section id="cleaning" class="py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs font-bold tracking-widest text-brand-steel uppercase bg-slate-100 px-3 py-1 rounded-full">Engineering Cleanliness</span>
+                <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight mt-3">Professional Sanitization Matrix</h2>
+                <div class="h-1 w-20 bg-brand-gold mx-auto mt-5 rounded-full"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1: Floor Waxing -->
+                <div class="relative rounded-2xl overflow-hidden shadow-premium group min-h-[380px] flex flex-col justify-end border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=600" alt="Industrial Floor Waxing" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <div class="w-10 h-10 bg-brand-gold text-brand-dark rounded-xl flex items-center justify-center text-md font-bold shadow-md"><i class="fas fa-brush"></i></div>
+                        <h4 class="font-extrabold text-lg text-white">Industrial Floor Waxing</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Deep mechanical scrubbing, compound strip coating, and specialized long-term floor sealants for commercial complexes.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2: Post-Construction -->
+                <div class="relative rounded-2xl overflow-hidden shadow-premium group min-h-[380px] flex flex-col justify-end border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=600" alt="Post-Construction Clean" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <div class="w-10 h-10 bg-brand-gold text-brand-dark rounded-xl flex items-center justify-center text-md font-bold shadow-md"><i class="fas fa-trowel-bricks"></i></div>
+                        <h4 class="font-extrabold text-lg text-white">Post-Construction</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Micro-dust removal vacuum loops, thorough paint stain removal, chemical grout deep scrubs, and structural masonry cleanups.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3: Upholstery & Carpets -->
+                <div class="relative rounded-2xl overflow-hidden shadow-premium group min-h-[380px] flex flex-col justify-end border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+                    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=600" alt="Upholstery Cleaning" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <div class="w-10 h-10 bg-brand-gold text-brand-dark rounded-xl flex items-center justify-center text-md font-bold shadow-md"><i class="fas fa-couch"></i></div>
+                        <h4 class="font-extrabold text-lg text-white">Upholstery & Carpet Systems</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Advanced injection extraction equipment handling high-traffic stains, sanitizing corporate office chairs, panels, and deep carpets.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4: Facades -->
+                <div class="relative rounded-2xl overflow-hidden shadow-premium group min-h-[380px] flex flex-col justify-end border border-slate-100 transition-all duration-300 hover:-translate-y-2">
+                    <img src="img/hospital.JPG" alt="Facade Cleaning" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <div class="w-10 h-10 bg-brand-gold text-brand-dark rounded-xl flex items-center justify-center text-md font-bold shadow-md"><i class="fas fa-wind"></i></div>
+                        <h4 class="font-extrabold text-lg text-white">High-Altitude Facades</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed">Certified rope-access and structural scaffold teams trained to scrub exterior glass curtain walls safely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTABLISHED CLIENTELE BRAND MATRIX -->
+    <section id="clientele" class="py-20 bg-brand-canvas border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-bold tracking-widest text-slate-400 uppercase mb-10">Trusted Across Infrastructure Chains in India</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 items-center justify-items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="font-black text-2xl text-slate-500 tracking-tighter">APEX<span class="text-xs font-bold block text-center tracking-widest text-slate-400">LOGISTICS</span></div>
+                <div class="font-black text-2xl text-slate-500 tracking-tighter">METRO<span class="text-xs font-bold block text-center tracking-widest text-slate-400">HEALTH</span></div>
+                <div class="font-black text-2xl text-slate-500 tracking-tighter">VANGUARD<span class="text-xs font-bold block text-center tracking-widest text-slate-400">CAPITAL</span></div>
+                <div class="font-black text-2xl text-slate-500 tracking-tighter">PRIME<span class="text-xs font-bold block text-center tracking-widest text-slate-400">ESTATES</span></div>
+                <div class="font-black text-2xl text-slate-500 tracking-tighter">TECHNE<span class="text-xs font-bold block text-center tracking-widest text-slate-400">FACTORIES</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM 10-STATES FOOTPRINT SECTION -->
+    <section id="presence" class="py-28 bg-brand-canvas relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#254E70_1px,transparent_1px),linear-gradient(to_bottom,#254E70_1px,transparent_1px)] [background-size:4rem_4rem]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-brand-steel uppercase bg-white px-4 py-1.5 rounded-full shadow-sm border border-slate-200/60">Pan-India Infrastructure</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-brand-dark tracking-tight leading-[1.15]">
+                        National Scale. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-steel to-brand-navy">Localized Command.</span>
+                    </h2>
+                    <div class="h-1 w-16 bg-brand-gold rounded-full my-4"></div>
+                    <p class="text-sm sm:text-base text-slate-500 leading-relaxed">
+                        With **10 strategic state offices** operating across India, JMJ Enterprises Solutions anchors rapid-deployment protocols for multi-location corporate entities, banking networks, and heavy manufacturing complexes.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm">
+                            <span class="block text-3xl font-black text-brand-dark">10</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1 block">State Headquarters</span>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-200/60 shadow-sm">
+                            <span class="block text-3xl font-black text-brand-dark">24/7</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1 block">Regional Dispatch</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-premium border border-slate-200/60 grid sm:grid-cols-2 gap-8 relative">
+                        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-gold/5 rounded-full filter blur-2xl"></div>
+                        <div class="space-y-4">
+                            <h4 class="font-extrabold text-sm uppercase tracking-widest text-brand-steel flex items-center border-b border-slate-100 pb-2">
+                                <i class="fas fa-compass text-brand-gold mr-2"></i> Northern Operations
+                            </h4>
+                            <ul class="space-y-2.5">
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Delhi NCR <span class="text-[10px] text-slate-400 ml-2 font-normal">(Central HQ)</span>
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Haryana <span class="text-[10px] text-slate-400 ml-2 font-normal">(Gurgaon Loop)</span>
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Uttar Pradesh <span class="text-[10px] text-slate-400 ml-2 font-normal">(Noida Hub)</span>
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Punjab Office
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="font-extrabold text-sm uppercase tracking-widest text-brand-steel flex items-center border-b border-slate-100 pb-2">
+                                <i class="fas fa-location-crosshairs text-brand-gold mr-2"></i> Southern & Western Loops
+                            </h4>
+                            <ul class="space-y-2.5">
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Karnataka <span class="text-[10px] text-slate-400 ml-2 font-normal">(Bangalore Hub)</span>
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Maharashtra <span class="text-[10px] text-slate-400 ml-2 font-normal">(Mumbai Loop)</span>
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Tamil Nadu Office
+                                </li>
+                                <li class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Telangana Hub
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="sm:col-span-2 space-y-4 pt-4 border-t border-slate-100">
+                            <h4 class="font-extrabold text-sm uppercase tracking-widest text-brand-steel flex items-center">
+                                <i class="fas fa-network-wired text-brand-gold mr-2"></i> East & Central Core Deployments
+                            </h4>
+                            <div class="grid sm:grid-cols-2 gap-2.5">
+                                <div class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    West Bengal Hub
+                                </div>
+                                <div class="flex items-center text-sm font-semibold text-brand-dark group">
+                                    <span class="w-2 h-2 bg-brand-gold rounded-full mr-2.5 transition-transform group-hover:scale-150"></span>
+                                    Madhya Pradesh Center
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDITED OPERATIONS SCHEDULER & CONTACT -->
+    <section id="contact" class="py-28 bg-white relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 bg-brand-dark shadow-2xl rounded-3xl overflow-hidden border border-slate-800">
+                <!-- Left Details Box -->
+                <div class="md:col-span-5 bg-gradient-to-br from-brand-navy to-brand-dark text-white p-10 md:p-14 flex flex-col justify-between relative">
+                    <div class="absolute inset-0 bg-[radial-gradient(#254E70_1px,transparent_1px)] [background-size:12px_12px] opacity-10"></div>
+                    <div class="relative z-10 space-y-6">
+                        <h3 class="text-3xl font-black tracking-tight">Initiate Security & Cleaning Audit</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                            Book an on-site structural risk assessment or establish a custom commercial cleaning contract matrix with our operations headquarters.
+                        </p>
+                        <div class="space-y-4 text-xs sm:text-sm pt-4">
+                            <p class="flex items-start"><i class="fas fa-map-location-dot text-brand-gold mr-3 text-base mt-0.5"></i> 250, Sant Nagar, East of Kailash, New Delhi – 110065</p>
+                            <p class="flex items-center"><i class="fas fa-envelope-open text-brand-gold mr-3 text-base"></i> jmjsanu@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="relative z-10 mt-12 pt-6 border-t border-slate-800 text-[11px] text-slate-500 tracking-wide">
+                        * All deployment surveys run strictly under company NDA protocols.
+                    </div>
+                </div>
+
+                <!-- Right Form Input Panel -->
+                <div class="md:col-span-7 p-10 md:p-14 bg-white">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Corporate Entity Name</label>
+                                <input type="text" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-steel text-sm transition" placeholder="e.g. Metro Hospital Complex">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Operations Email</label>
+                                <input type="email" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-steel text-sm transition" placeholder="ops@entity.com">
+                            </div>
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Requested Roster Mix</label>
+                                <select class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-steel text-sm text-slate-600 transition">
+                                    <option>Bank Security Guards (High-Risk Profile)</option>
+                                    <option>Integrated Hospital Guards & Cleaning Crews</option>
+                                    <option>Corporate MNC Roster & Facilities Package</option>
+                                    <option>Industrial Plant Cleaning & Guard Contract</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Deployment City</label>
+                                <input type="text" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-steel text-sm transition" placeholder="e.g. Delhi NCR, Bangalore">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Detailed Facility Scope Requirements</label>
+                            <textarea rows="4" class="w-full bg-slate-50 border border-slate-200/80 rounded-xl px-4 py-3.5 focus:outline-none focus:border-brand-steel text-sm transition" placeholder="Detail active shift patterns, total facility square footage, or key access pain points..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-gold hover:bg-amber-500 text-brand-dark font-extrabold py-4 px-6 rounded-xl shadow-lg transition-all duration-300 uppercase tracking-widest text-xs sm:text-sm">
+                            Submit Operational Mandate <i class="fas fa-file-contract ml-2 text-sm"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structural Modern Footer -->
+    <footer class="bg-brand-dark text-slate-400 text-xs sm:text-sm py-14 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <p class="font-extrabold text-white text-lg tracking-tight mb-1.5">JMJ ENTERPRISES SOLUTIONS</p>
+                <p class="text-xs text-slate-500 max-w-sm leading-relaxed">High-performance corporate physical guard rosters and technical facility deep cleaning networks covering major enterprise nodes.</p>
+            </div>
+            <div class="text-xs text-slate-600 font-medium">
+                <p>&copy; 2026 JMJ Enterprises Solutions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTWEIGHT RESPONSIVE MOBILE MENU INTERACTION SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = !mobileDrawer.classList.contains('translate-x-full');
+            
+            if (isOpen) {
+                // Close Drawer Matrix
+                mobileDrawer.classList.add('translate-x-full');
+                drawerOverlay.classList.add('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                // Open Drawer Matrix
+                mobileDrawer.classList.remove('translate-x-full');
+                drawerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+                document.body.classList.add('overflow-hidden');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        drawerOverlay.addEventListener('click', toggleMenu);
+
+        // Auto-collapse navigation panel upon executing internal target jumps
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileDrawer.classList.contains('translate-x-full')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

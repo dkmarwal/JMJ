@@ -1,0 +1,37 @@
+# JMJ Enterprises Solutions - Apache Configuration & Security Headers
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /jmj/
+
+    # Block access to hidden files and sensitive directories
+    RewriteRule (^|/)\.(?!well-known) - [F]
+    RewriteRule ^config/.*$ - [F,L]
+    RewriteRule ^core/.*$ - [F,L]
+    RewriteRule ^views/.*$ - [F,L]
+    RewriteRule ^database/.*$ - [F,L]
+
+    # Serve direct file if it exists in uploads, assets, or admin
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Special handler for sitemaps and robots
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+    RewriteRule ^blog-sitemap\.xml$ sitemap.php?type=blog [L]
+    RewriteRule ^service-sitemap\.xml$ sitemap.php?type=service [L]
+    RewriteRule ^robots\.txt$ robots.txt [L]
+
+    # Route everything else through index.php front controller
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Security Headers
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes

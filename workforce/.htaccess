@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Prevent direct access to sensitive config, storage, and database files
+    RewriteRule ^(config|storage|database|cron|tests|core|models|services|middleware) - [F,L,NC]
+    RewriteCond %{REQUEST_URI} !manifest\.json$
+    RewriteRule \.(env|sql|log|md|json)$ - [F,L,NC]
+
+    # Handle Front Controller
+    RewriteRule ^mobile/?$ index.php [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

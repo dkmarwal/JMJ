@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /config/
+Disallow: /core/
+Disallow: /database/
+
+Sitemap: https://jmjenterprisessolutions.com/sitemap.xml
+Sitemap: https://jmjenterprisessolutions.com/blog-sitemap.xml
+Sitemap: https://jmjenterprisessolutions.com/service-sitemap.xml
