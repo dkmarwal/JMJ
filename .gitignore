@@ -1,0 +1,46 @@
+# ==============================================================================
+# JMJ Enterprise Solutions - Git Ignore Rules
+# ==============================================================================
+
+# Environment configuration & secrets (NEVER commit real .env files to Git)
+.env
+*.env
+.env.*
+config/.env
+workforce/config/.env
+
+# Allow environment templates
+!.env.example
+!config/.env.example
+!workforce/config/.env.example
+
+# Microsoft Office temporary files
+~$*
+
+# Operating System & IDE files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Local test artifacts & cookies
+tests/test_role_*.txt
+workforce/tests/test_role_*.txt
+scratch/
+
+# Runtime uploads (keep folder, ignore user uploads)
+workforce/uploads/selfies/*.jpg
+!workforce/uploads/selfies/.gitkeep
+workforce/uploads/documents/*
+!workforce/uploads/documents/.gitkeep
+workforce/storage/
+storage/
+
+# Logs & Temporary files
+*.log
+logs/
+tmp/
+temp/
